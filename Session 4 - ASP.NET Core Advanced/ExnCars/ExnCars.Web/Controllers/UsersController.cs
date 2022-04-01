@@ -17,7 +17,6 @@ namespace ExnCars.Web.Controllers
     [HttpGet]
     public IActionResult Index()
     {
-      throw new NotImplementedException();
       var userDtos = userService.GetAllUsers() ?? new List<UserDto>();
 
       var userViewModels = userDtos.Select(x => new UserViewModel
