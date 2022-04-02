@@ -12,7 +12,7 @@ builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddDbContext<ExnCarsContext>(options =>
 {
-  options.UseSqlServer(@"Data Source=DESKTOP-52\SQLEXPRESS;Initial Catalog=ExnCars;Integrated Security=True");
+  options.UseSqlServer(builder.Configuration.GetConnectionString("ExnCars"));
 });
 
 // Add services to the container.
